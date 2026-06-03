@@ -56,3 +56,8 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /TP8_GRUPO_05/.vs/TP8_GRUPO_05.slnx
+
+# Visual Studio DB files
+*.db
+*.db-shm
+*.db-wal
