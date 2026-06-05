@@ -1,5 +1,6 @@
 ﻿using Negocio;
 using System;
+using System.Data;
 
 namespace Vistas
 {
@@ -24,6 +25,25 @@ namespace Vistas
             Sucursales mis_sucursales = new Sucursales();
             gvSucursal0.DataSource = mis_sucursales.getSucursales();
             gvSucursal0.DataBind();
+        }
+
+        protected void btnFiltrar0_Click(object sender, EventArgs e)
+        {
+            lblMensaje.Text = "";
+            SucursalesNeg sucursalesNeg = new SucursalesNeg();
+
+            DataTable resultado = sucursalesNeg.filtrarPorId(txtIdSucursal0.Text);
+            if (resultado != null)
+            {
+                gvSucursal0.DataSource = resultado;
+                gvSucursal0.DataBind();
+            }
+
+            else
+            {
+                throw new Exception("El ID ingresado no es válido.");
+            }
+
         }
     }
 }

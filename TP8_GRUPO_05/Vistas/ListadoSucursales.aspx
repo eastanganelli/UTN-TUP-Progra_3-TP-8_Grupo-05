@@ -59,7 +59,9 @@
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
-                    <td colspan="2">&nbsp;</td>
+                    <td colspan="2">
+                        <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="2">&nbsp;</td>
@@ -76,7 +78,7 @@
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style6">
-                        <asp:Button ID="btnFiltrar0" runat="server" Text="Filtrar" />
+                        <asp:Button ID="btnFiltrar0" runat="server" Text="Filtrar" OnClick="btnFiltrar0_Click" />
                     </td>
                     <td>
                         <asp:Button ID="btnMostrarTodos0" runat="server" Text="Mostrar todos" Width="100px" OnClick="btnMostrarTodos0_Click" />
@@ -90,10 +92,11 @@
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="2">
+                        &nbsp;</td>
+                    <td class="auto-style4">
                         <asp:GridView ID="gvSucursal0" runat="server">
                         </asp:GridView>
                     </td>
-                    <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td colspan="2">&nbsp;</td>
                 </tr>

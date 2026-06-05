@@ -17,7 +17,7 @@
             width: 215px;
         }
         .auto-style5 {
-            width: 180px;
+            width: 185px;
         }
     </style>
 </head>
@@ -66,7 +66,7 @@
                         <asp:TextBox ID="txtIngresarId" runat="server" Width="200px"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" Width="70px" />
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" Width="70px" OnClick="btnEliminar_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
