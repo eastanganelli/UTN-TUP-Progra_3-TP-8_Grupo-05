@@ -38,5 +38,13 @@ namespace Datos
             conexion.Close();
             return setDatos.Tables[nombreTabla];
         }
+        public int EjecutarConsulta(string consulta) {
+            SqlConnection conexion = new SqlConnection(rutaBaseDeDatos);
+            conexion.Open();
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            int resultado = comando.ExecuteNonQuery();
+            conexion.Close();
+            return resultado;
+        }
     }
 }
