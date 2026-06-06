@@ -13,5 +13,15 @@ namespace Vistas
         {
 
         }
+
+        protected void lbListadoDeSucursales_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("ListadoSucursales.aspx");
+        }
+
+        protected void lbEliminarSucursal_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("EliminarSucursales.aspx");
+        }
     }
 }

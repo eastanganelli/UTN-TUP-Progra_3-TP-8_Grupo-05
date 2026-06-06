@@ -65,10 +65,10 @@
                         <asp:LinkButton ID="lbAgregarSucursal" runat="server">Agregar Sucursal</asp:LinkButton>
                     </td>
                     <td class="auto-style9">
-                        <asp:LinkButton ID="lbListadoDeSucursales" runat="server">Lisatado de Sucursales</asp:LinkButton>
+                        <asp:LinkButton ID="lbListadoDeSucursales" runat="server" OnClick="lbListadoDeSucursales_Click">Listado de Sucursales</asp:LinkButton>
                     </td>
                     <td>
-                        <asp:LinkButton ID="lbEliminarSucursal" runat="server">Eliminar Sucursal</asp:LinkButton>
+                        <asp:LinkButton ID="lbEliminarSucursal" runat="server" OnClick="lbEliminarSucursal_Click">Eliminar Sucursal</asp:LinkButton>
                     </td>
                 </tr>
                 <tr>

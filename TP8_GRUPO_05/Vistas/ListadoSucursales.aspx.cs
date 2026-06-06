@@ -1,0 +1,49 @@
+﻿using Negocio;
+using System;
+using System.Data;
+
+namespace Vistas
+{
+    public partial class ListadoSucursales : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbAgregarSucursal_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AgregarSucursal.aspx");
+        }
+
+        protected void lbEliminarSucursal0_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("EliminarSucursales.aspx");
+        }
+
+        protected void btnMostrarTodos0_Click(object sender, EventArgs e) {
+            Sucursales mis_sucursales = new Sucursales();
+            gvSucursal0.DataSource = mis_sucursales.getSucursales();
+            gvSucursal0.DataBind();
+        }
+
+        protected void btnFiltrar0_Click(object sender, EventArgs e)
+        {
+            lblMensaje.Text = "";
+            SucursalesNeg sucursalesNeg = new SucursalesNeg();
+
+            DataTable resultado = sucursalesNeg.filtrarPorId(txtIdSucursal0.Text);
+            if (resultado != null)
+            {
+                gvSucursal0.DataSource = resultado;
+                gvSucursal0.DataBind();
+            }
+
+            else
+            {
+                throw new Exception("El ID ingresado no es válido.");
+            }
+
+        }
+    }
+}

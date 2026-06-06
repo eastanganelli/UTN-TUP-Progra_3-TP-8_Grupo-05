@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarSucursal.aspx" />
+    <Content Include="EliminarSucursales.aspx" />
+    <Content Include="ListadoSucursales.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +79,20 @@
     </Compile>
     <Compile Include="AgregarSucursal.aspx.designer.cs">
       <DependentUpon>AgregarSucursal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarSucursales.aspx.cs">
+      <DependentUpon>EliminarSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarSucursales.aspx.designer.cs">
+      <DependentUpon>EliminarSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoSucursales.aspx.cs">
+      <DependentUpon>ListadoSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListadoSucursales.aspx.designer.cs">
+      <DependentUpon>ListadoSucursales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -90,6 +106,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{62ff2230-10f4-4fb0-9f24-2f3a3a12b563}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{bc53894c-c58a-4372-9712-36aa78d05c06}</Project>
       <Name>Entidades</Name>
@@ -98,6 +118,9 @@
       <Project>{91eb8890-bfd1-4423-9d9f-757271e323d4}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

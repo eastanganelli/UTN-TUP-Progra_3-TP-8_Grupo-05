@@ -27,7 +27,6 @@ namespace Datos
             {
                 return null;
             }
-
         }
 
         public int ObtenerMaximo(String consulta)
@@ -55,6 +54,25 @@ namespace Datos
             FilasCambiadas = cmd.ExecuteNonQuery();
             Conexion.Close();
             return FilasCambiadas;
+        }
+        public DataTable ObtenerTabla(string consulta, string nombreTabla)
+        {
+            SqlConnection conexion = new SqlConnection(rutaBaseDeDatos);
+            conexion.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+            DataSet setDatos = new DataSet();
+            adaptador.Fill(setDatos, nombreTabla);
+            conexion.Close();
+            return setDatos.Tables[nombreTabla];
+        }
+        public int EjecutarConsulta(string consulta)
+        {
+            SqlConnection conexion = new SqlConnection(rutaBaseDeDatos);
+            conexion.Open();
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            int resultado = comando.ExecuteNonQuery();
+            conexion.Close();
+            return resultado;
         }
     }
 }
