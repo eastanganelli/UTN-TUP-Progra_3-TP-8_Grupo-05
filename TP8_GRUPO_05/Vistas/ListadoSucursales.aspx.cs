@@ -8,7 +8,11 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack) {
+                Sucursales mis_sucursales = new Sucursales();
+                gvSucursal0.DataSource = mis_sucursales.getSucursales();
+                gvSucursal0.DataBind();
+            }
         }
 
         protected void lbAgregarSucursal_Click(object sender, EventArgs e)
@@ -25,6 +29,7 @@ namespace Vistas
             Sucursales mis_sucursales = new Sucursales();
             gvSucursal0.DataSource = mis_sucursales.getSucursales();
             gvSucursal0.DataBind();
+            txtIdSucursal0.Text = "";
         }
 
         protected void btnFiltrar0_Click(object sender, EventArgs e)
@@ -41,8 +46,10 @@ namespace Vistas
 
             else
             {
-                throw new Exception("El ID ingresado no es válido.");
+                lblMensaje.Text = "Debe ingresar un ID numérico.";
             }
+
+            txtIdSucursal0.Text = "";
 
         }
     }
