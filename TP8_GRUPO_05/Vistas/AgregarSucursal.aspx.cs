@@ -29,7 +29,8 @@ namespace Vistas
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            Sucursal sucursal = new Sucursal(txtNombreSucursal.Text, txtDescripción.Text, Convert.ToInt32(ddlProvincia.SelectedValue), txtDirección.Text);
+            Sucursal sucursal = new Sucursal(txtNombreSucursal.Text, txtDescripción.Text, 
+                Convert.ToInt32(ddlProvincia.SelectedValue), txtDirección.Text);
            
             if (neg.AgregarSucursal(sucursal))
             {
