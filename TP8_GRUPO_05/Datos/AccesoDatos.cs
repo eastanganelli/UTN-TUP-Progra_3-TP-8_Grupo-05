@@ -29,19 +29,6 @@ namespace Datos
             }
         }
 
-        public int ObtenerMaximo(String consulta)
-        {
-            int max = 0;
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, Conexion);
-            SqlDataReader datos = cmd.ExecuteReader();
-            if (datos.Read())
-            {
-                max = Convert.ToInt32(datos[0].ToString());
-            }
-            return max;
-        }
-
         public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String NombreSP)
         {
             int FilasCambiadas;

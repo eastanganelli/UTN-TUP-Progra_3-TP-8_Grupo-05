@@ -1,6 +1,8 @@
 ﻿using Datos;
+using Entidades;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Negocio {
     public class Sucursales {
@@ -25,6 +27,30 @@ namespace Negocio {
             int resultado = conexion.EjecutarConsulta(consulta);
             if (resultado == 0) 
                 throw new Exception($"No se encontró sucursal con ID: {Id_sucursal}");
+        }
+
+        public int agregarSucursal(Sucursal sucursal)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosSucursalAgregar(ref comando, sucursal);
+            return conexion.EjecutarProcedimientoAlmacenado(comando, "spAgregarSucursal");
+        }
+
+        private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucursal)
+        {
+            SqlParameter parametro;
+
+            parametro = Comando.Parameters.Add("@NOMBRE", SqlDbType.VarChar);
+            parametro.Value = sucursal.Nombre_Sucursal;
+
+            parametro = Comando.Parameters.Add("@DESCRIPCION", SqlDbType.VarChar);
+            parametro.Value = sucursal.Descripcion_Sucursal;
+
+            parametro = Comando.Parameters.Add("@PROVINCIA", SqlDbType.Int);
+            parametro.Value = sucursal.Id_Provincia_Sucursal;
+
+            parametro = Comando.Parameters.Add("@DIRECCION", SqlDbType.VarChar);
+            parametro.Value = sucursal.Direccion_Sucursal;
         }
     }
 }
