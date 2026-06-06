@@ -18,7 +18,7 @@ namespace Entidades
 
         Sucursal() { }
 
-        Sucursal(string nombreSucursal, string descripcionSucursal, int id_ProvinciaSucursal, string direccionSucursal)
+        public Sucursal(string nombreSucursal, string descripcionSucursal, int id_ProvinciaSucursal, string direccionSucursal)
         {
             NombreSucursal = nombreSucursal;
             DescripcionSucursal = descripcionSucursal;

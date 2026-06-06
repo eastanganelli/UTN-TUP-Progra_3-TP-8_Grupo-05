@@ -52,6 +52,24 @@
         .auto-style14 {
             height: 32px;
         }
+        .auto-style16 {
+            width: 70px;
+            height: 35px;
+        }
+        .auto-style17 {
+            width: 165px;
+            height: 35px;
+        }
+        .auto-style18 {
+            width: 240px;
+            height: 35px;
+        }
+        .auto-style19 {
+            height: 35px;
+        }
+        .auto-style20 {
+            width: 47px;
+        }
     </style>
 </head>
 <body>
@@ -60,13 +78,14 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style9">
+                    <td class="auto-style3">
                         <asp:LinkButton ID="lbAgregarSucursal" runat="server">Agregar Sucursal</asp:LinkButton>
                     </td>
                     <td class="auto-style9">
                         <asp:LinkButton ID="lbListadoDeSucursales" runat="server" OnClick="lbListadoDeSucursales_Click">Listado de Sucursales</asp:LinkButton>
                     </td>
+                    <td class="auto-style20" >
+                        &nbsp;</td>
                     <td>
                         <asp:LinkButton ID="lbEliminarSucursal" runat="server" OnClick="lbEliminarSucursal_Click">Eliminar Sucursal</asp:LinkButton>
                     </td>
@@ -78,12 +97,12 @@
                     <td class="auto-style6"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">
+                    <td class="auto-style16"></td>
+                    <td class="auto-style17">
                         <asp:Label ID="lblGrupo" runat="server" Font-Bold="True" Font-Size="20pt" Text="GRUPO N° 5"></asp:Label>
                     </td>
-                    <td class="auto-style7" colspan="2">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style18" colspan="2"></td>
+                    <td class="auto-style19"></td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
@@ -157,9 +176,11 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7" colspan="2">
-                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="75px" />
+                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="75px" OnClick="btnAceptar_Click" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblConfirmacion" runat="server"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>
