@@ -16,7 +16,7 @@ namespace Entidades
         private string DireccionSucursal;
         private string URL_Imagen_Sucursal;
 
-        Sucursal() { }
+        public Sucursal() { }
 
         public Sucursal(string nombreSucursal, string descripcionSucursal, int id_ProvinciaSucursal, string direccionSucursal)
         {

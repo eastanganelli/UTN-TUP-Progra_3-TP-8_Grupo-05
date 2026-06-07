@@ -28,16 +28,22 @@ namespace Vistas
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             lblMensaje.Text = "";
-            try
+            SucursalesNeg sucursalesNeg = new SucursalesNeg();
+            int confir = sucursalesNeg.eliminarSucursal(txtIngresarId.Text);
+            if (confir == 1)
             {
-                SucursalesNeg sucursalesNeg = new SucursalesNeg();
-                sucursalesNeg.eliminarSucursal(txtIngresarId.Text);
                 lblMensaje.Text = "La sucursal se ha eliminado con éxito";
             }
-            catch (Exception ex)
+            else if (confir == 2)
             {
-                lblMensaje.Text = ex.Message;
+                lblMensaje.Text = "El ID ingresado no es válido";
             }
+            else if (confir == 0)
+            {
+                lblMensaje.Text = "Error al eliminar la sucursal";
+            }
+
+
         }
     }
 }

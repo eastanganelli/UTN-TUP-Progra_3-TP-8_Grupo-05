@@ -21,16 +21,17 @@ namespace Negocio
             return sucursal.getSucursalPorId(id);
         }
 
-        public void eliminarSucursal(string input)
+        public int eliminarSucursal(string input)
         {
-            if (int.TryParse(input, out int id))
-            {
-                sucursal.eliminarSucursal(id);
-            }
-            else
-            {
+            if (!int.TryParse(input, out int id))
+                return 2;
 
-            }
+            Sucursales suc = new Sucursales();
+            Sucursal s = new Sucursal();
+
+            s.IdSucursal = id;
+
+            return suc.EliminarSucursal(s) == 1 ? 1 : 0;
         }
 
         public bool AgregarSucursal(Sucursal sucursal)

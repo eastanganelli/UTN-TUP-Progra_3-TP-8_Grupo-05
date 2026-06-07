@@ -26,18 +26,24 @@ namespace Negocio {
         }
 
       
-        public void eliminarSucursal(int Id_sucursal) {
-            string consulta = $"DELETE FROM Sucursal WHERE Id_Sucursal = {Id_sucursal}";
-            int resultado = conexion.EjecutarConsulta(consulta);
-            if (resultado == 0) 
-                throw new Exception($"No se encontró sucursal con ID: {Id_sucursal}");
+        public int EliminarSucursal(Sucursal sucursal) {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosSucursalEliminar(ref comando, sucursal);
+            return conexion.EjecutarProcedimientoAlmacenado(comando, "SP_EliminarSucursal");
+        }
+
+        private void ArmarParametrosSucursalEliminar(ref SqlCommand Comando, Sucursal sucursal)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
+            SqlParametros.Value = sucursal.IdSucursal;
         }
 
         public int agregarSucursal(Sucursal sucursal)
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosSucursalAgregar(ref comando, sucursal);
-            return conexion.EjecutarProcedimientoAlmacenado(comando, "spAgregarSucursal");
+            return conexion.EjecutarProcedimientoAlmacenado(comando, "SP_AgregarSucursal");
         }
 
         private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucursal)
