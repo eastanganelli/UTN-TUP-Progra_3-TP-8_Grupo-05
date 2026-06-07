@@ -9,10 +9,15 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) {
-                Sucursales mis_sucursales = new Sucursales();
-                gvSucursal0.DataSource = mis_sucursales.getSucursales();
-                gvSucursal0.DataBind();
+                CargarSucursales();
             }
+        }
+
+        public void CargarSucursales()
+        {
+            Sucursales mis_sucursales = new Sucursales();
+            gvSucursal0.DataSource = mis_sucursales.getSucursales();
+            gvSucursal0.DataBind();
         }
 
         protected void lbAgregarSucursal_Click(object sender, EventArgs e)
@@ -26,9 +31,7 @@ namespace Vistas
         }
 
         protected void btnMostrarTodos0_Click(object sender, EventArgs e) {
-            Sucursales mis_sucursales = new Sucursales();
-            gvSucursal0.DataSource = mis_sucursales.getSucursales();
-            gvSucursal0.DataBind();
+            CargarSucursales();
             txtIdSucursal0.Text = "";
         }
 
@@ -38,15 +41,20 @@ namespace Vistas
             SucursalesNeg sucursalesNeg = new SucursalesNeg();
 
             DataTable resultado = sucursalesNeg.filtrarPorId(txtIdSucursal0.Text);
-            if (resultado != null)
+            if (resultado == null)
+            {
+                CargarSucursales();
+                lblMensaje.Text = "Debe ingresar un valor numérico.";
+            }
+            else if (resultado.Rows.Count == 0)
+            {
+                CargarSucursales();
+                lblMensaje.Text = "No existe una sucursal con ese ID.";
+            }
+            else
             {
                 gvSucursal0.DataSource = resultado;
                 gvSucursal0.DataBind();
-            }
-
-            else
-            {
-                lblMensaje.Text = "Debe ingresar un ID numérico.";
             }
 
             txtIdSucursal0.Text = "";

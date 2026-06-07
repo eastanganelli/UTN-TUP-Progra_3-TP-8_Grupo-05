@@ -9,14 +9,18 @@ namespace Negocio {
         AccesoDatos conexion = new AccesoDatos();
         public DataTable getSucursales()
         {
-            const string consulta = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripción, Provincia.DescripcionProvincia AS Provincia, DireccionSucursal AS Dirección FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
+            const string consulta = "SELECT Id_Sucursal, NombreSucursal AS Nombre, " +
+                "DescripcionSucursal AS Descripción, " +
+                "Provincia.DescripcionProvincia AS Provincia, DireccionSucursal AS Dirección FROM Sucursal " +
+                "INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
             DataTable tabla = conexion.ObtenerTabla(consulta, "Sucursales");
             return tabla;
         }
 
         public DataTable getSucursalPorId(int id)
         {
-            string consulta = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripción, Provincia.DescripcionProvincia AS Provincia, DireccionSucursal AS Dirección FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + id;
+            string consulta = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripción, Provincia.DescripcionProvincia AS Provincia, DireccionSucursal " +
+                "AS Dirección FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + id;
             DataTable tabla = conexion.ObtenerTabla(consulta, "Sucursales");
             return tabla;
         }

@@ -14,11 +14,11 @@ namespace Negocio
 
         public DataTable filtrarPorId(string input)
         {
-            if (int.TryParse(input, out int id))
+            if (!int.TryParse(input, out int id))
             {
-                return sucursal.getSucursalPorId(id);
+                return null;
             }
-            return null;
+            return sucursal.getSucursalPorId(id);
         }
 
         public void eliminarSucursal(string input)
