@@ -43,7 +43,7 @@ namespace Vistas
                 lblMensaje.Text = "Error al eliminar la sucursal";
             }
 
-            lblMensaje.Text = "";
+            txtIngresarId.Text = "";
         }
     }
 }
