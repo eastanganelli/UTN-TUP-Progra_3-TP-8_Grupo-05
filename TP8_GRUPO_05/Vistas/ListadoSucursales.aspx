@@ -50,8 +50,8 @@
                 <tr>
                     <td class="auto-style2" colspan="2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td colspan="2">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="2">
@@ -64,9 +64,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" colspan="2">&nbsp;</td>
+                    <td class="auto-style2" colspan="2">
+                        &nbsp;</td>
+
                     <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style3">
+                    <asp:Label ID="lblFiltrarProvincia" runat="server" Text="Filtrar por Provincia:"></asp:Label>
+                    </td>
                     <td colspan="2">&nbsp;</td>
                 </tr>
                 <tr>
@@ -74,19 +78,27 @@
                         <asp:Label ID="lblBusqueda0" runat="server" Text="Búsqueda ingrese ID sucursal:"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtIdSucursal0" runat="server" Width="220px"></asp:TextBox>
+                    <asp:TextBox ID="txtIdSucursal0" runat="server" Width="220px"></asp:TextBox>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style6">
+
+                    <td class="auto-style3">
+                        <asp:DropDownList ID="ddlProvinciaFiltro" runat="server" Width="220px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvinciaFiltro_SelectedIndexChanged" CausesValidation="False">
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style3">
                         <asp:Button ID="btnFiltrar0" runat="server" Text="Filtrar" OnClick="btnFiltrar0_Click" />
-                    </td>
-                    <td>
                         <asp:Button ID="btnMostrarTodos0" runat="server" Text="Mostrar todos" Width="100px" OnClick="btnMostrarTodos0_Click" />
                     </td>
+                    <td class="auto-style6">
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="2">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblContador" runat="server" Font-Bold="True" ForeColor="#333333"></asp:Label>
+                    </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td colspan="2">&nbsp;</td>
                 </tr>

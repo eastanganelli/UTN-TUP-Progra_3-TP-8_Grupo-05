@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
+using Datos;
 
 namespace Negocio
 {
@@ -12,13 +13,18 @@ namespace Negocio
     {
         Sucursales sucursal = new Sucursales();
 
+        public DataTable getProvincias()
+        {
+            return sucursal.getTablaProvincias();
+        }   
+
         public DataTable filtrarPorId(string input)
         {
-            if (!int.TryParse(input, out int id))
+            if (int.TryParse(input, out int id))
             {
-                return null;
+                return sucursal.getSucursalPorId(id);
             }
-            return sucursal.getSucursalPorId(id);
+            return null;
         }
 
         public int eliminarSucursal(string input)
@@ -45,6 +51,19 @@ namespace Negocio
                 return true;
             else
                 return false;
+        }
+
+        public bool verificarExistencia(string nombre, string direccion)
+        {
+            return sucursal.existeSucursal(nombre, direccion);
+        }
+
+        
+
+        public DataTable listarPorProvincia(int idProvincia)
+        {
+
+            return sucursal.getSucursalesPorProvincia(idProvincia);
         }
 
     }

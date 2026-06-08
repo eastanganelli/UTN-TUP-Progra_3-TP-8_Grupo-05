@@ -70,6 +70,34 @@
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
+                <asp:Panel ID="panelConfirmacion" runat="server" Visible="false">
+                    <tr>
+                        <td colspan="5">
+                            <asp:Label ID="lblPregunta" runat="server" Text="¿Seguro que deseas eliminar la siguiente sucursal?" Font-Bold="True" ForeColor="Red"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Nombre:</td>
+                        <td colspan="3"><asp:Label ID="lblNombre" runat="server" Text=""></asp:Label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Descripción:</td>
+                        <td colspan="3"><asp:Label ID="lblDescripcion" runat="server" Text=""></asp:Label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Dirección:</td>
+                        <td colspan="3"><asp:Label ID="lblDireccion" runat="server" Text=""></asp:Label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                        <td colspan="3">
+                            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
+                            &nbsp;&nbsp;
+                            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" />
+                        </td>
+                    </tr>
+                </asp:Panel>
                 <tr>
                     <td colspan="2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>

@@ -69,6 +69,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblMensaje;
 
         /// <summary>
+        /// Control lblFiltrarProvincia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFiltrarProvincia;
+
+        /// <summary>
         /// Control lblBusqueda0.
         /// </summary>
         /// <remarks>
@@ -87,6 +96,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtIdSucursal0;
 
         /// <summary>
+        /// Control ddlProvinciaFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProvinciaFiltro;
+
+        /// <summary>
         /// Control btnFiltrar0.
         /// </summary>
         /// <remarks>
@@ -103,6 +121,15 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnMostrarTodos0;
+
+        /// <summary>
+        /// Control lblContador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContador;
 
         /// <summary>
         /// Control gvSucursal0.
