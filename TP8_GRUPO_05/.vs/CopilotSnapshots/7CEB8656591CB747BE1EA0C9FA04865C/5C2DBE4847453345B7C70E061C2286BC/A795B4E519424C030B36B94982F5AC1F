@@ -1,0 +1,29 @@
+﻿using Negocio;
+using System;
+
+namespace Vistas
+{
+    public partial class ListadoSucursales : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbAgregarSucursal_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("AgregarSucursal.aspx");
+        }
+
+        protected void lbEliminarSucursal0_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("EliminarSucursales.aspx");
+        }
+
+        protected void btnMostrarTodos0_Click(object sender, EventArgs e) {
+            Sucursales mis_sucursales = new Sucursales();
+            gvSucursal0.DataSource = mis_sucursales.getSucursales();
+            gvSucursal0.DataBind();
+        }
+    }
+}
